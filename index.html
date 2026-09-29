@@ -8,124 +8,112 @@
   <meta property="og:title" content="VALEUR — Il valore sta nella scelta">
   <meta property="og:description" content="Prodotti, servizi e opportunità selezionati con attenzione a qualità, utilità e convenienza.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f4efe7">
+  <meta name="theme-color" content="#f7f2e9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --cream:#f4efe7;
+      --cream:#f7f2e9;
       --paper:#fffdf9;
-      --sand:#eadfce;
-      --ink:#171717;
+      --sand:#ece1d2;
+      --ink:#1b1a18;
       --muted:#6f6a63;
       --orange:#ff7a00;
-      --orange-soft:#ffe4cc;
-      --green:#87b983;
-      --blue:#86b8d8;
-      --violet:#9b8bd3;
-      --coral:#e99a7b;
-      --line:#ded6ca;
-      --dark:#202020;
+      --orange-dark:#d85c00;
+      --green:#8eae83;
+      --blue:#7ea9c9;
+      --violet:#9385c1;
+      --coral:#df9276;
+      --line:#ded7cd;
+      --dark:#20201e;
       --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+    body{margin:0;font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
 
-    header{position:sticky;top:0;z-index:50;background:rgba(244,239,231,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,23,23,.08)}
-    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.16em}
+    header{position:sticky;top:0;z-index:40;background:rgba(247,242,233,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,26,24,.08)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.15em}
     .mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff;font-weight:800;box-shadow:0 8px 24px rgba(255,122,0,.22)}
-    .navlinks{display:flex;gap:30px;font-size:14px;font-weight:600;color:#4e4a45}
-    .navlinks a{transition:.2s}.navlinks a:hover{color:var(--orange)}
+    .navlinks{display:flex;gap:30px;font-size:14px;font-weight:600;color:#4f4a44}
+    .navlinks a{transition:.2s ease}.navlinks a:hover{color:var(--orange)}
 
-    .hero{padding:72px 0 84px;background:linear-gradient(180deg,#fffaf3 0%,var(--cream) 100%)}
-    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--orange);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .hero{padding:76px 0 88px;background:linear-gradient(180deg,#fffaf3 0%,var(--cream) 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
     .eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
     h1,h2,.serif{font-family:"Playfair Display",serif}
-    h1{font-size:clamp(58px,7vw,96px);line-height:.94;letter-spacing:-.045em;margin:18px 0 26px;font-weight:700}
+    h1{font-size:clamp(58px,7vw,94px);line-height:.95;letter-spacing:-.045em;margin:18px 0 26px;font-weight:700}
     h1 em{font-style:italic;color:var(--orange)}
-    .lead{font-size:20px;color:#5f5b55;max-width:650px;margin:0}
+    .lead{font-size:20px;line-height:1.7;color:#5f5a54;max-width:650px;margin:0}
     .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-    .btn{min-height:52px;padding:0 24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;transition:.22s}
-    .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 28px rgba(255,122,0,.22)}
-    .btn-primary:hover{transform:translateY(-2px);background:#e96f00}
-    .btn-ghost{background:#fff;border:1px solid var(--line)}
-    .btn-ghost:hover{transform:translateY(-2px);border-color:#c9bfb2}
-    .hero-note{margin-top:28px;display:flex;gap:24px;flex-wrap:wrap;color:#746f68;font-size:13px}
-    .hero-note span{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+    .btn{min-height:52px;padding:0 24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;transition:.22s ease}
+    .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 30px rgba(255,122,0,.18)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--orange-dark)}
+    .btn-ghost{border:1px solid #cfc6ba;background:rgba(255,255,255,.52)}
+    .btn-ghost:hover{transform:translateY(-2px);background:#fff}
 
-    .hero-collage{position:relative;min-height:560px}
-    .photo-main{position:absolute;right:0;top:0;width:78%;height:82%;border-radius:34px;overflow:hidden;box-shadow:0 28px 70px rgba(66,50,35,.16)}
-    .photo-main img{width:100%;height:100%;object-fit:cover}
-    .photo-small{position:absolute;left:0;bottom:0;width:46%;height:42%;border-radius:28px;overflow:hidden;border:8px solid var(--cream);box-shadow:0 18px 45px rgba(66,50,35,.16)}
-    .photo-small img{width:100%;height:100%;object-fit:cover}
-    .floating-card{position:absolute;left:7%;top:9%;background:#fff;border:1px solid #eee3d5;border-radius:20px;padding:18px 20px;box-shadow:0 16px 42px rgba(65,49,33,.14);max-width:210px}
-    .floating-card strong{display:block;font-family:"Playfair Display",serif;font-size:25px;line-height:1.05;margin-bottom:6px}.floating-card span{font-size:12px;color:#746f68}
-    .floating-pill{position:absolute;right:5%;bottom:7%;background:var(--dark);color:#fff;border-radius:999px;padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:.05em}
+    .hero-photo{position:relative}
+    .hero-photo img{width:100%;height:570px;object-fit:cover;border-radius:34px;box-shadow:0 30px 70px rgba(70,54,34,.16)}
+    .hero-photo:after{content:"";position:absolute;left:30px;bottom:-22px;width:120px;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--orange),#ffb266)}
+    .hero-note{margin-top:38px;display:flex;justify-content:flex-end;color:#716b64;font-size:13px;font-weight:600;letter-spacing:.04em}
 
-    section{padding:92px 0}
-    .section-kicker{color:var(--orange);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;margin-bottom:10px}
-    .section-title{font-size:clamp(40px,4.8vw,60px);line-height:1;letter-spacing:-.03em;margin:0 0 16px}
-    .section-sub{font-size:17px;color:var(--muted);max-width:730px;margin:0 0 40px}
+    section{padding:94px 0}
+    .section-head{display:flex;justify-content:space-between;gap:34px;align-items:flex-end;margin-bottom:38px}
+    .section-title{font-size:clamp(38px,4.4vw,56px);line-height:1.02;letter-spacing:-.035em;margin:0}
+    .section-sub{max-width:620px;margin:0;color:var(--muted);font-size:17px}
 
-    .categories{background:var(--paper)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .card{background:#fff;border:1px solid #e9e0d5;border-radius:26px;overflow:hidden;transition:.24s;box-shadow:0 10px 26px rgba(53,43,34,.04)}
-    .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(53,43,34,.10)}
-    .card-media{height:180px;overflow:hidden;position:relative}
-    .card-media img{width:100%;height:100%;object-fit:cover;transition:.35s}
-    .card:hover .card-media img{transform:scale(1.04)}
-    .card-badge{position:absolute;left:16px;top:16px;border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.9);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
-    .card-body{padding:22px}
-    .card-body h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 8px}
-    .card-body p{color:var(--muted);margin:0 0 20px}
-    .link{font-weight:700;color:var(--orange)}
-    .tone-green{background:#eef6ec}.tone-blue{background:#eef6fb}.tone-violet{background:#f2effb}.tone-coral{background:#fbf0eb}.tone-orange{background:#fff2e7}.tone-sand{background:#f5efe6}
+    .categories{background:var(--paper);border-top:1px solid rgba(27,26,24,.06);border-bottom:1px solid rgba(27,26,24,.06)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:.24s ease;box-shadow:0 10px 30px rgba(61,49,36,.05)}
+    .card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(61,49,36,.10)}
+    .card-image{height:205px;overflow:hidden;background:#eee}
+    .card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .card:hover .card-image img{transform:scale(1.035)}
+    .card-body{padding:22px 22px 24px}
+    .tag{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px}
+    .tag.orange{color:var(--orange)}.tag.green{color:#66865f}.tag.blue{color:#527b99}.tag.violet{color:#7463aa}.tag.coral{color:#bd6e53}
+    .card h3{font-size:22px;margin:0 0 8px}.card p{margin:0;color:var(--muted);font-size:15px}.card .link{display:inline-block;margin-top:18px;font-size:14px;font-weight:800}
 
-    .highlight{background:linear-gradient(135deg,#202020,#2b2b2b);color:#fff;overflow:hidden}
-    .highlight-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-    .highlight .section-sub{color:#c9c4bd}
-    .feature-image{height:520px;border-radius:32px;overflow:hidden;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.25)}
-    .feature-image img{width:100%;height:100%;object-fit:cover}
-    .feature-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.35))}
-    .feature-copy{display:grid;gap:18px}
-    .feature-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-    .feature-item:last-child{border-bottom:0}.feature-item span{font-size:12px;color:#ffac63;text-transform:uppercase;letter-spacing:.14em;font-weight:700}.feature-item h3{font-family:"Playfair Display",serif;font-size:30px;margin:5px 0 6px}.feature-item p{margin:0;color:#c9c4bd}
+    .statement{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+    .statement:before{content:"";position:absolute;width:470px;height:470px;border-radius:50%;right:-130px;top:-170px;background:radial-gradient(circle,rgba(255,122,0,.36),transparent 68%)}
+    .statement-grid{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .statement h2{font-size:clamp(44px,5.4vw,72px);line-height:1;margin:0}.statement h2 em{color:#ff9a3d}
+    .statement-copy{font-size:19px;line-height:1.75;color:#d7d2ca}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 14px;font-size:13px;color:#f3ede5;background:rgba(255,255,255,.04)}
 
-    .selection{background:#f2e8dc}
-    .offers{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
-    .offer{border-radius:30px;overflow:hidden;position:relative;min-height:390px;background:#fff;border:1px solid #ded3c5}
-    .offer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .offer:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 20%,rgba(0,0,0,.72) 100%)}
-    .offer-content{position:absolute;left:28px;right:28px;bottom:26px;z-index:2;color:#fff}
-    .offer-content .tag{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:#ffd1a5}.offer-content h3{font-family:"Playfair Display",serif;font-size:34px;margin:6px 0 6px}.offer-content p{margin:0;color:#eee3d8;max-width:560px}
+    .featured{background:#f0e7da}
+    .feature-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:24px}
+    .feature-card{position:relative;min-height:420px;border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 16px 38px rgba(68,49,29,.08)}
+    .feature-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+    .feature-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(19,18,17,.78) 100%)}
+    .feature-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:28px;color:#fff}
+    .feature-copy .tag{color:#ffc48e}.feature-copy h3{font-family:"Playfair Display",serif;font-size:34px;line-height:1.05;margin:7px 0 8px}.feature-copy p{margin:0;color:#eee8e1;max-width:520px}
 
     .how{background:var(--paper)}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .step{padding:28px;border-radius:24px;background:#fff;border:1px solid #e8dfd4}
-    .num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--orange-soft);color:var(--orange);font-weight:800;margin-bottom:30px}
-    .step h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 8px}.step p{margin:0;color:var(--muted)}
+    .step{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;min-height:210px}.num{color:var(--orange);font-size:13px;font-weight:800;letter-spacing:.13em}.step h3{font-size:23px;margin:16px 0 8px}.step p{margin:0;color:var(--muted)}
 
-    .closing{background:linear-gradient(120deg,#f4b173,#ff7a00);color:#1d1711;padding:72px 0}
-    .closing-box{display:flex;justify-content:space-between;align-items:center;gap:30px}.closing h2{font-family:"Playfair Display",serif;font-size:clamp(38px,5vw,62px);line-height:1;margin:0;max-width:760px}.closing .btn{background:#171717;color:#fff;white-space:nowrap}
+    footer{background:#171715;color:#d4cec5;padding:54px 0 62px;font-size:13px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}.footer-grid .brand{color:#fff}.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:24px;line-height:1.7;color:#9f9a92}
 
-    footer{background:#181818;color:#c9c5bf;padding:48px 0 58px;font-size:13px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.footer-grid .brand{color:#fff}.footer-grid .mark{box-shadow:none}.legal{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);font-size:12px;line-height:1.65}
-
-    @media(max-width:900px){.hero-grid,.highlight-grid,.offers,.footer-grid{grid-template-columns:1fr}.hero-collage{min-height:480px}.grid,.steps{grid-template-columns:1fr 1fr}.closing-box{align-items:flex-start;flex-direction:column}.navlinks{display:none}}
-    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.hero{padding:54px 0 64px}.grid,.steps{grid-template-columns:1fr}.hero-collage{min-height:410px}.photo-main{width:86%;height:78%}.photo-small{width:52%;height:39%}.floating-card{left:0;top:5%;max-width:170px;padding:14px}.floating-card strong{font-size:20px}.feature-image{height:380px}.offer{min-height:330px}.section-title{font-size:40px}h1{font-size:58px}}
+    @media(max-width:900px){.hero-grid,.statement-grid,.feature-grid,.footer-grid{grid-template-columns:1fr}.grid,.steps{grid-template-columns:1fr 1fr}.section-head{display:block}.section-sub{margin-top:14px}.navlinks{display:none}.hero-photo img{height:480px}}
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.hero{padding:54px 0 70px}.grid,.steps{grid-template-columns:1fr}.hero-photo img{height:410px;border-radius:24px}h1{font-size:55px}.section-title{font-size:40px}.statement h2{font-size:48px}.feature-card{min-height:360px}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top"><span class="mark">V</span><span>VALEUR</span></a>
-      <nav class="navlinks"><a href="#categorie">Categorie</a><a href="#offerte">In evidenza</a><a href="#come-funziona">Come funziona</a></nav>
+      <nav class="navlinks">
+        <a href="#categorie">Categorie</a>
+        <a href="#selezioni">Selezioni</a>
+        <a href="#come-funziona">Come funziona</a>
+      </nav>
     </div>
   </header>
 
@@ -135,83 +123,74 @@
         <div>
           <div class="eyebrow">Scelto bene. Spendi meglio.</div>
           <h1>Il valore sta nella <em>scelta.</em></h1>
-          <p class="lead">VALEUR seleziona prodotti, servizi ed esperienze che meritano attenzione. Meno rumore, più qualità, utilità e convenienza.</p>
-          <div class="cta-row"><a class="btn btn-primary" href="#offerte">Scopri le selezioni</a><a class="btn btn-ghost" href="#categorie">Esplora le categorie</a></div>
-          <div class="hero-note"><span><i class="dot"></i>Scelte curate</span><span><i class="dot"></i>Partner selezionati</span><span><i class="dot"></i>Nessun catalogo infinito</span></div>
+          <p class="lead">VALEUR raccoglie prodotti, servizi ed esperienze selezionati con un criterio semplice: devono essere utili, interessanti e avere un valore reale.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#selezioni">Scopri le selezioni</a>
+            <a class="btn btn-ghost" href="#categorie">Esplora le categorie</a>
+          </div>
         </div>
-        <div class="hero-collage">
-          <div class="photo-main"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85" alt="Interno contemporaneo elegante"></div>
-          <div class="photo-small"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=700&q=85" alt="Verde e giardino"></div>
-          <div class="floating-card"><strong>Scelte con criterio.</strong><span>Qualità · Utilità · Convenienza · Esperienza</span></div>
-          <div class="floating-pill">VALEUR SELECT</div>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=88" alt="Interno contemporaneo elegante">
+          <div class="hero-note">CURATED LIFESTYLE · VALEUR</div>
         </div>
       </div>
     </section>
 
     <section class="categories" id="categorie">
       <div class="wrap">
-        <div class="section-kicker">Le categorie</div>
-        <h2 class="section-title">Tutto quello che può creare valore.</h2>
-        <p class="section-sub">Dalla casa ai viaggi, dalla mobilità ai servizi: una selezione trasversale costruita per aiutarti a scegliere meglio.</p>
+        <div class="section-head">
+          <h2 class="section-title">Più di una categoria.<br>Un modo di scegliere.</h2>
+          <p class="section-sub">Casa, outdoor, mobilità, viaggi e servizi: mondi diversi, selezionati con lo stesso criterio di qualità e convenienza.</p>
+        </div>
         <div class="grid">
-          <a class="card tone-sand" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Casa e lifestyle"><span class="card-badge">Casa</span></div><div class="card-body"><h3>Casa & Lifestyle</h3><p>Arredo, tecnologia e soluzioni utili per vivere meglio gli spazi.</p><span class="link">Scopri →</span></div></a>
-          <a class="card tone-green" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80" alt="Giardino"><span class="card-badge">Outdoor</span></div><div class="card-body"><h3>Giardino</h3><p>Attrezzature, cura del verde e idee intelligenti per gli spazi esterni.</p><span class="link">Scopri →</span></div></a>
-          <a class="card tone-blue" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Mobilità e noleggio"><span class="card-badge">Mobilità</span></div><div class="card-body"><h3>Noleggio</h3><p>Auto e servizi di mobilità selezionati per semplicità e convenienza.</p><span class="link">Scopri →</span></div></a>
-          <a class="card tone-violet" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Viaggi ed esperienze"><span class="card-badge">Experience</span></div><div class="card-body"><h3>Viaggi</h3><p>Soggiorni ed esperienze per partire meglio e scegliere con criterio.</p><span class="link">Scopri →</span></div></a>
-          <a class="card tone-coral" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Servizi digitali"><span class="card-badge">Servizi</span></div><div class="card-body"><h3>Servizi utili</h3><p>Soluzioni digitali e servizi che semplificano il lavoro e la vita quotidiana.</p><span class="link">Scopri →</span></div></a>
-          <a class="card tone-orange" href="#offerte"><div class="card-media"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Shopping selezionato"><span class="card-badge">Shopping</span></div><div class="card-body"><h3>Scelte smart</h3><p>Prodotti interessanti per rapporto tra qualità, prezzo e reale utilità.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82" alt="Casa e design"></div><div class="card-body"><div class="tag orange">Casa</div><h3>Casa & Lifestyle</h3><p>Design, tecnologia e soluzioni intelligenti per vivere meglio gli spazi.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=82" alt="Giardino e outdoor"></div><div class="card-body"><div class="tag green">Outdoor</div><h3>Giardino</h3><p>Idee, attrezzature e servizi per il verde e gli spazi esterni.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=82" alt="Mobilità e auto"></div><div class="card-body"><div class="tag blue">Mobilità</div><h3>Noleggio</h3><p>Mobilità, auto e servizi scelti per semplicità, flessibilità e convenienza.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82" alt="Viaggi ed esperienze"></div><div class="card-body"><div class="tag violet">Experience</div><h3>Viaggi</h3><p>Soggiorni ed esperienze che meritano attenzione, non un catalogo infinito.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=82" alt="Servizi utili"></div><div class="card-body"><div class="tag coral">Servizi</div><h3>Servizi utili</h3><p>Soluzioni digitali e servizi che fanno risparmiare tempo e semplificano la vita.</p><span class="link">Scopri →</span></div></a>
+          <a class="card" href="#selezioni"><div class="card-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82" alt="Lifestyle e shopping"></div><div class="card-body"><div class="tag orange">Shopping</div><h3>Scelte smart</h3><p>Prodotti scelti per utilità, qualità e rapporto tra valore e prezzo.</p><span class="link">Scopri →</span></div></a>
         </div>
       </div>
     </section>
 
-    <section class="highlight">
-      <div class="wrap highlight-grid">
-        <div class="feature-image"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=85" alt="Selezione VALEUR"></div>
-        <div>
-          <div class="section-kicker">Il nostro metodo</div>
-          <h2 class="section-title">Non mostriamo tutto.<br>Mostriamo ciò che vale.</h2>
-          <p class="section-sub">VALEUR nasce per ridurre il rumore. Ogni proposta deve avere un motivo chiaro per essere qui.</p>
-          <div class="feature-copy">
-            <div class="feature-item"><span>01 · Qualità</span><h3>Prima il valore reale.</h3><p>Guardiamo alla qualità percepita, all'affidabilità e all'esperienza complessiva.</p></div>
-            <div class="feature-item"><span>02 · Utilità</span><h3>Solo ciò che serve davvero.</h3><p>Preferiamo soluzioni concrete, semplici da capire e facili da usare.</p></div>
-            <div class="feature-item"><span>03 · Convenienza</span><h3>Prezzo e beneficio devono avere senso.</h3><p>Non basta uno sconto: conta il rapporto tra costo e vantaggio reale.</p></div>
-          </div>
-        </div>
+    <section class="statement">
+      <div class="wrap statement-grid">
+        <h2>Non tutto.<br><em>Solo ciò che vale.</em></h2>
+        <div class="statement-copy">VALEUR nasce per ridurre il rumore. Non vogliamo mostrare centinaia di alternative: vogliamo mettere in evidenza quelle che, per utilità, qualità, convenienza o esperienza, meritano davvero uno sguardo.<div class="pill-row"><span class="pill">Qualità</span><span class="pill">Utilità</span><span class="pill">Convenienza</span><span class="pill">Esperienza</span></div></div>
       </div>
     </section>
 
-    <section class="selection" id="offerte">
+    <section class="featured" id="selezioni">
       <div class="wrap">
-        <div class="section-kicker">In evidenza</div>
-        <h2 class="section-title">Le selezioni del momento.</h2>
-        <p class="section-sub">Uno spazio editoriale per valorizzare offerte, prodotti e servizi selezionati senza trasformare VALEUR in un catalogo.</p>
-        <div class="offers">
-          <article class="offer"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85" alt="Offerta selezionata"><div class="offer-content"><div class="tag">Selezione VALEUR</div><h3>Offerta del momento</h3><p>Qui inseriremo una proposta forte, con un beneficio chiaro e un partner selezionato.</p></div></article>
-          <article class="offer"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=85" alt="Servizio selezionato"><div class="offer-content"><div class="tag">Consigliato</div><h3>Servizio selezionato</h3><p>Una seconda proposta messa in evidenza con lo stesso criterio editoriale.</p></div></article>
+        <div class="section-head">
+          <h2 class="section-title">In evidenza</h2>
+          <p class="section-sub">Uno spazio editoriale per promozioni, servizi e opportunità selezionate da VALEUR.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=84" alt="Selezione Valeur"><div class="feature-copy"><div class="tag">Selezione VALEUR</div><h3>Le opportunità del momento</h3><p>Le proposte che vale la pena conoscere, raccontate in modo semplice e diretto.</p></div></article>
+          <article class="feature-card"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=84" alt="Servizi selezionati"><div class="feature-copy"><div class="tag">Consigliato</div><h3>Servizi selezionati</h3><p>Soluzioni utili e affidabili per semplificare decisioni, acquisti ed esperienze.</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="how" id="come-funziona">
       <div class="wrap">
-        <div class="section-kicker">Come funziona</div>
-        <h2 class="section-title">Semplice, trasparente, utile.</h2>
+        <div class="section-head"><h2 class="section-title">Come scegliamo</h2><p class="section-sub">Un processo semplice: meno quantità, più attenzione alla qualità della scelta.</p></div>
         <div class="steps">
-          <div class="step"><div class="num">01</div><h3>Selezioniamo</h3><p>Valutiamo qualità, utilità, convenienza e chiarezza dell'offerta.</p></div>
-          <div class="step"><div class="num">02</div><h3>Semplifichiamo</h3><p>Mettiamo in evidenza solo le informazioni che aiutano davvero a decidere.</p></div>
-          <div class="step"><div class="num">03</div><h3>Condividiamo</h3><p>Ti portiamo alla pagina ufficiale del partner tramite il link dedicato.</p></div>
+          <div class="step"><div class="num">01 · SELEZIONE</div><h3>Valutiamo</h3><p>Guardiamo utilità, qualità percepita, convenienza e chiarezza dell'offerta.</p></div>
+          <div class="step"><div class="num">02 · SINTESI</div><h3>Semplifichiamo</h3><p>Mettiamo in evidenza ciò che conta davvero per decidere in modo più rapido.</p></div>
+          <div class="step"><div class="num">03 · SCELTA</div><h3>Condividiamo</h3><p>Ti indirizziamo alla pagina ufficiale del partner quando vuoi approfondire.</p></div>
         </div>
       </div>
-    </section>
-
-    <section class="closing">
-      <div class="wrap closing-box"><h2>Scelto bene.<br>Spendi meglio.</h2><a class="btn" href="#offerte">Guarda le selezioni</a></div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <div class="footer-grid"><div><div class="brand"><span class="mark">V</span><span>VALEUR</span></div><p>Il valore sta nella scelta.</p></div><div><strong>Trasparenza</strong><p>Alcuni link presenti sul sito possono essere link affiliati.</p></div></div>
+      <div class="footer-grid">
+        <div><div class="brand"><span class="mark">V</span><span>VALEUR</span></div><p>Il valore sta nella scelta.</p></div>
+        <div><strong style="color:#fff">Trasparenza</strong><p>Alcuni link presenti sul sito possono essere link affiliati.</p></div>
+      </div>
       <div class="legal">VALEUR può ricevere una commissione se l'utente effettua un acquisto o completa un'azione tramite alcuni link presenti sul sito, senza costi aggiuntivi per l'utente. Le offerte e le condizioni finali sono sempre quelle indicate sul sito del partner.<br><br>© 2026 VALEUR. Tutti i diritti riservati.</div>
     </div>
   </footer>
