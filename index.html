@@ -32,7 +32,17 @@ footer{background:#050505;color:#918a7e;padding:48px 0 54px;font-size:13px;borde
 @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.hero{min-height:650px;background-position:68% center}.hero-content{padding:80px 0 66px}.hero h1{font-size:50px}.lead{font-size:18px}.grid,.article-grid,.steps,.trustgrid{grid-template-columns:1fr}.trustitem{border-right:0;border-bottom:1px solid var(--line)}.section-title{font-size:39px}.select-card{min-height:350px}}
 @media(max-width:900px){.hero{min-height:0;display:flex;flex-direction:column}.hero-content{max-width:100%;padding:54px 0 24px}.hero-image{position:relative;inset:auto;order:2;align-self:flex-end;width:178%;max-width:none;height:auto;object-fit:contain;margin:0 0 24px}.hero h1{font-size:clamp(42px,7vw,64px)}}
 </style>
-</head>
+<style id="valeur-motion">
+.navlinks a,.btn,.nav-cta,.guide-link,.back,.reading nav a,.article a{transition:color .25s ease,background-color .25s ease,border-color .25s ease}
+@media(hover:hover) and (pointer:fine){
+.select-card img,.article img,.guide-photo img{transition:transform .65s cubic-bezier(.2,.65,.3,1)}
+.select-card:hover img,.article:hover img{transform:scale(1.025)}
+.guide-photo{overflow:hidden;border-radius:18px}.guide-photo:hover img{transform:scale(1.015)}
+.nav-cta:hover,.btn-primary:hover{background:#e0c27b;color:#111!important}
+.article a:hover,.guide-link:hover,.back:hover,.reading nav a:hover{color:#fff}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}.card:hover,.card:hover img,.select-card:hover img,.article:hover img,.guide-photo:hover img{transform:none!important}}
+</style></head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">V</span><span>VALEUR</span></a><nav class="navlinks"><a href="#categorie">Vini</a><a href="#selezioni">Selezioni</a><a href="#guide">Guide</a><a href="#come">Come scegliamo</a><a class="nav-cta" href="#selezioni">Scopri</a></nav></div></header>
 <main id="top">
@@ -54,4 +64,29 @@ footer{background:#050505;color:#918a7e;padding:48px 0 54px;font-size:13px;borde
 <section class="disclosure"><div class="wrap"><div class="disclosure-box"><div class="disclosure-icon">i</div><div><h3>Trasparenza sulle affiliazioni</h3><p>Alcuni link presenti su VALEUR possono essere link affiliati. Se l'utente effettua un acquisto o completa un'azione tramite uno di questi link, VALEUR può ricevere una commissione senza costi aggiuntivi per l'utente. Prezzi, disponibilità e condizioni finali sono sempre quelli indicati sul sito del partner.</p></div></div></div></section>
 </main>
 <footer><div class="wrap"><div class="footer-grid"><div><a class="brand" href="#top"><span class="mark">V</span><span>VALEUR</span></a><p>Vini, Champagne e selezioni da scoprire.</p></div><div><strong style="color:#e5dccd">Esplora VALEUR</strong><div class="footer-links"><a href="chi-siamo.html">Chi siamo</a><a href="guide.html">Guide</a><a href="privacy.html">Privacy</a><a href="contatti.html">Contatti</a></div></div></div><div class="legal">Gli acquisti vengono effettuati direttamente sui siti dei partner. VALEUR non gestisce ordini, pagamenti, spedizioni o resi.<br>VALEUR è un publisher digitale e non è il venditore, produttore o fornitore dei prodotti presentati. © 2026 VALEUR.</div></div></footer>
-</body></html>
+<script id="valeur-motion-script">
+(function(){
+  var preference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(preference.matches||!('IntersectionObserver' in window)||!Element.prototype.animate)return;
+  var running=new Set();
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      observer.unobserve(entry.target);
+      if(preference.matches)return;
+      var animation=entry.target.animate([
+        {opacity:0,transform:'translateY(14px)'},
+        {opacity:1,transform:'translateY(0)'}
+      ],{duration:650,easing:'cubic-bezier(.2,.65,.3,1)'});
+      running.add(animation);
+      animation.onfinish=animation.oncancel=function(){running.delete(animation)};
+    });
+  },{threshold:0.08});
+  document.querySelectorAll('.section-head,.card,.select-card,.article-grid>.article,.grid>.article,.step,.statement-grid,.about-grid,.reading>h2,.reading>p:not(.lead),.reading>.guide-photo,.reading>.visual-summary,.reading>aside').forEach(function(el){
+    if(el.getBoundingClientRect().top>=window.innerHeight)observer.observe(el);
+  });
+  preference.addEventListener('change',function(event){
+    if(event.matches){observer.disconnect();running.forEach(function(animation){animation.cancel()})}
+  });
+})();
+</script></body></html>
