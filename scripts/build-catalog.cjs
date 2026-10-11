@@ -34,7 +34,7 @@ async function build() {
  }
  const out=path.resolve('dist');await fs.mkdir(path.join(out,'data'),{recursive:true});
  for(const name of await fs.readdir('.')){
-  if(/\.(html|png|jpg|jpeg|svg|ico|webp|txt|xml)$/.test(name)||['champagne','assets'].includes(name))await fs.cp(name,path.join(out,name),{recursive:true});
+  if(/\.(html|png|jpg|jpeg|svg|ico|webp|txt|xml|webmanifest)$/.test(name)||['champagne','assets'].includes(name))await fs.cp(name,path.join(out,name),{recursive:true});
  }
  await fs.writeFile(path.join(out,'data/catalogo.json'),JSON.stringify(data));
 }
