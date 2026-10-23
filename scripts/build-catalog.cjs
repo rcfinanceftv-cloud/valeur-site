@@ -27,13 +27,16 @@ function normalize(p) {
  return {id:String(o.sourceProductId),name:clean(p.name),description:clean(p.description),brand:clean(p.brand),type,country:clean(f.beverage_country),region:clean(f.beverage_region),appellation:clean(f.wine_appellation),format:clean(f.bottle_capacity),price,currency:history[0]?.price?.currency||'EUR',available:o.availability==='in stock'||Number(o.inStock)>0,url,image:p.productImage?.url||'',modified:o.modified||null};
 }
 async function build() {
+ // The luxury boutique is independent of the feed. Keep the currently published
+ // catalogue byte-for-byte equivalent in product data if TradeDoubler cannot refresh.
+ let previous=null;
+ try{const r=await fetch('https://www.valeuritalia.it/data/catalogo.json',{signal:AbortSignal.timeout(30000),headers:{'Cache-Control':'no-cache'}});if(r.ok)previous=await r.json();}catch{}
+ let data;
+ try {
  const token=process.env.TRADEDOUBLER_FEED_TOKEN;if(!token)throw Error('Missing server-side feed configuration');
  const suffix=`;fid=${FEED}?token=${encodeURIComponent(token)}`;
  let version=null;
  try{const r=await fetch('https://api.tradedoubler.com/1.0/productsUnlimited/lastUpdated.json'+suffix,{signal:AbortSignal.timeout(45000)});if(r.ok)version=(await r.json()).lastUpdatedTime||null;}catch{}
- let previous=null;
- try{const r=await fetch('https://www.valeuritalia.it/data/catalogo.json',{signal:AbortSignal.timeout(30000),headers:{'Cache-Control':'no-cache'}});if(r.ok)previous=await r.json();}catch{}
- let data;
  if(version&&previous?.feedVersion===version&&previous?.schemaVersion===SCHEMA&&previous?.sourceTotal===previous?.total&&previous?.products?.length===previous?.total){const stats=validate(previous.products);data={...previous,stats,checkedAt:new Date().toISOString()};console.log('Feed unchanged; reusing validated complete catalog');}
  else {
   const r=await fetch('https://api.tradedoubler.com/1.0/productsUnlimited.json'+suffix,{signal:AbortSignal.timeout(120000)});
@@ -45,6 +48,14 @@ async function build() {
   if(version){const check=await fetch('https://api.tradedoubler.com/1.0/productsUnlimited/lastUpdated.json'+suffix,{signal:AbortSignal.timeout(45000)});if(!check.ok||(await check.json()).lastUpdatedTime!==version)throw Error('Feed changed during import; retry later');}
   data={schemaVersion:SCHEMA,updatedAt:new Date().toISOString(),checkedAt:new Date().toISOString(),feedVersion:version,feedId:FEED,sourceTotal:raw.products.length,total:products.length,stats,products};
   console.log('Validated '+products.length+' catalog products');
+ }
+ } catch (error) {
+  // A temporary feed/API problem must never erase or replace the working catalogue.
+  // Only reuse data previously published on the official site after strict validation.
+  if(!previous||previous.feedId!==FEED||!Array.isArray(previous.products)||previous.products.length!==previous.total)throw error;
+  const stats=validate(previous.products);
+  data={...previous,stats,checkedAt:new Date().toISOString()};
+  console.warn('TradeDoubler update could not complete; retaining validated published VALEUR catalogue while deploying editorial pages.');
  }
  const out=path.resolve('dist');await fs.mkdir(path.join(out,'data'),{recursive:true});
  for(const name of await fs.readdir('.')){
