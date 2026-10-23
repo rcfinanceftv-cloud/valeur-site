@@ -29,11 +29,25 @@
     const monogram = elem('span','luxury-visual-monogram',p.category === 'Champagne d’eccezione' ? '15 L' : p.category === 'Distillati d’eccezione' ? 'XO' : '2019');
     visual.append(mark,monogram,elem('span','luxury-visual-maker',p.maker));
     if (p.image) {
-      try { const i = new URL(p.image); if (i.protocol === 'https:' && /(^|\.)vinatis\.(it|fr|com|de)$/.test(i.hostname)) {
-        const img = document.createElement('img'); img.src = i.href; img.alt = p.name; img.loading = 'lazy';
-        img.onerror = () => { img.remove(); visual.classList.remove('has-photo'); };
-        visual.append(img); visual.classList.add('has-photo');
-      }} catch {}
+      try {
+        const i = new URL(p.image);
+        const trustedImageHosts = new Set([
+          'www.vinatis.it', 'www.vinatis.fr', 'www.vinatis.com', 'www.vinatis.de',
+          'www.champagneshop.com', 'www.tannico.it', 'sothebys-md.brightspotcdn.com',
+          'www.whiskyshop.com', 'www.theperfectbottle.com'
+        ]);
+        if (i.protocol === 'https:' && trustedImageHosts.has(i.hostname)) {
+          const img = document.createElement('img');
+          img.src = i.href;
+          img.alt = p.name + ' – fotografia del prodotto';
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          img.referrerPolicy = 'no-referrer';
+          img.onerror = () => { img.remove(); visual.classList.remove('has-photo'); };
+          visual.append(img);
+          visual.classList.add('has-photo');
+        }
+      } catch {}
     }
     const body = elem('div','luxury-card-body');
     const heading = elem('h2','',p.name);
