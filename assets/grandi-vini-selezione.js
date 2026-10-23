@@ -54,7 +54,8 @@
     const link = allowed(p.affiliateUrl);
     body.append(elem('p','luxury-eyebrow',p.category),heading,elem('p','luxury-tagline',p.tagline),
       elem('p','luxury-description',p.description),elem('p','luxury-meta',[p.region,p.format].filter(Boolean).join(' · ')),
-      elem('p','luxury-price',p.priceNote || 'Prezzo su Vinatis'),
+      elem('p','luxury-price',Number.isFinite(p.priceEUR) ? new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}).format(p.priceEUR) : 'Prezzo su Vinatis'),
+      elem('p','luxury-price-origin',p.priceType === 'foreign_reference' ? 'Riferimento Vinatis '+p.priceCountry+' · non è il prezzo per l’Italia' : 'Prezzo rilevato su Vinatis Italia'),
       elem('p','luxury-availability',p.availabilityNote || 'Verifica disponibilità sul sito del partner.'));
     if (link) {
       const cta = elem('a','luxury-cta','Verifica su Vinatis ↗');
