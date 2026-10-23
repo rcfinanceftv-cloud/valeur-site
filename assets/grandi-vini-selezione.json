@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "source": "Selezione editoriale VALEUR; indipendente dal feed TradeDoubler 53631",
+  "lastEditorialReview": "2026-10-23",
+  "products": [
+    {
+      "id": "vinatis-11",
+      "name": "Moët & Chandon Brut Impérial — Nabucodonosor",
+      "category": "Champagne d’eccezione",
+      "maker": "Moët & Chandon",
+      "region": "Champagne · Francia",
+      "format": "15 L · Cassa in legno",
+      "tagline": "Un grande formato per occasioni straordinarie",
+      "description": "La cuvée Brut Impérial della Maison Moët & Chandon in formato Nabucodonosor da 15 litri, proposta con cassa in legno. Un pezzo di forte impatto scenografico, da scoprire per celebrare le grandi occasioni.",
+      "priceNote": "Prezzo aggiornato su Vinatis",
+      "availabilityNote": "Prezzo e disponibilità da verificare sul sito del partner.",
+      "affiliateUrl": "https://clk.tradedoubler.com/click?p=353866&a=3500844&url=https%3A%2F%2Fwww.vinatis.it%2F11-nabucodonosor-champagne-moet-chandon-brut-imperial-cassa-di-legno",
+      "image": ""
+    },
+    {
+      "id": "vinatis-55144",
+      "name": "Château Le Pin 2019",
+      "category": "Grandi vini da collezione",
+      "maker": "Château Le Pin",
+      "region": "Bordeaux · Pomerol · Francia",
+      "format": "2019 · 0,75 L",
+      "tagline": "Il fascino di una produzione rarissima",
+      "description": "Da una piccola proprietà nel cuore di Pomerol, Le Pin 2019 è un Merlot di particolare rarità. Un Bordeaux ricercato, con un profilo aromatico intenso e una grande vocazione all’invecchiamento.",
+      "priceNote": "Prezzo aggiornato su Vinatis",
+      "availabilityNote": "La pagina Vinatis consultata lo segnala indisponibile. Verifica eventuali aggiornamenti sul sito del partner.",
+      "affiliateUrl": "https://clk.tradedoubler.com/click?p=353866&a=3500844&url=https%3A%2F%2Fwww.vinatis.it%2F55144-le-pin-2019",
+      "image": ""
+    }
+  ]
+}
