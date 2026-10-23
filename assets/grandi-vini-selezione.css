@@ -3,8 +3,8 @@
 a{color:inherit}input,select{font:inherit}a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a17839;outline-offset:3px}
 .wrap{width:min(1200px,calc(100% - 40px));margin:auto}
 header{background:#111;color:#f3ecd9}header nav{min-height:78px;display:flex;align-items:center;gap:25px}header nav>a{font-size:14px;text-decoration:none}
-.brand{margin-right:auto;font:800 20px/1.2 Manrope,Arial,sans-serif;letter-spacing:.12em;color:#e5cca0!important;white-space:nowrap}
-.brand .mark{display:inline-grid;place-items:center;border:1px solid #b69552;border-radius:50%;width:37px;height:37px;letter-spacing:0;font-family:'Playfair Display',Georgia,serif;font-weight:600;margin-right:12px}
+.brand{margin-right:auto;font:25px 'Playfair Display',Georgia,serif;letter-spacing:.12em;color:#e5cca0!important;white-space:nowrap}
+.brand .mark{display:inline-grid;place-items:center;border:1px solid #b69552;border-radius:50%;width:37px;height:37px;letter-spacing:0;margin-right:12px}
 .hero{background:#e8ddc9;padding:55px 0}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .eyebrow,.luxury-eyebrow{text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-size:12px;font-weight:700}
 h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.15}
