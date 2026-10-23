@@ -52,4 +52,4 @@ async function build() {
  }
  await fs.writeFile(path.join(out,'data/catalogo.json'),JSON.stringify(data));
 }
-module.exports={normalize,validate,build};if(require.main===module)build().catch(()=>{console.error('Catalog update failed. Check feed availability/configuration; current site is not replaced.');process.exitCode=1});
+module.exports={normalize,validate,build};if(require.main===module)build().catch(error=>{const reason=String(error.message||'Unknown error').replaceAll(process.env.TRADEDOUBLER_FEED_TOKEN||'__NO_TOKEN__','[redacted]').replace(/https?:\/\/\S+/g,'[URL redacted]');console.error('Catalog update failed: '+reason+'; current site is not replaced.');process.exitCode=1});
