@@ -25,8 +25,8 @@
   const renderCard = p => {
     const article = elem('article','luxury-card');
     const visual = elem('div','luxury-card-visual');
-    const mark = elem('div','luxury-mark',p.category === 'Champagne d’eccezione' ? 'CHAMPAGNE' : 'GRAND VIN');
-    const monogram = elem('span','luxury-visual-monogram',p.category === 'Champagne d’eccezione' ? '15 L' : '2019');
+    const mark = elem('div','luxury-mark',p.category === 'Champagne d’eccezione' ? 'CHAMPAGNE' : p.category === 'Distillati d’eccezione' ? 'COGNAC' : 'GRAND VIN');
+    const monogram = elem('span','luxury-visual-monogram',p.category === 'Champagne d’eccezione' ? '15 L' : p.category === 'Distillati d’eccezione' ? 'XO' : '2019');
     visual.append(mark,monogram,elem('span','luxury-visual-maker',p.maker));
     if (p.image) {
       try { const i = new URL(p.image); if (i.protocol === 'https:' && /(^|\.)vinatis\.(it|fr|com|de)$/.test(i.hostname)) {
