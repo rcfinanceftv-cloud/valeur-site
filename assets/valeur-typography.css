@@ -1,0 +1,37 @@
+/* VALEUR — coherent typographic hierarchy
+   Display: Playfair Display for headings and editorial introductions.
+   Functional: Manrope for product descriptions, prices and navigation. */
+:root{
+  --valeur-editorial-font:'Playfair Display',Georgia,serif;
+  --valeur-ui-font:Manrope,Arial,sans-serif;
+}
+.lead,
+.section-sub,
+.section-head > p,
+.statement-copy,
+.about-copy,
+.hero .hero-grid > div > p:not(.eyebrow),
+.selection-head > p,
+.intro > p:first-of-type,
+.luxury-feature-copy > p:not(.luxury-feature-examples),
+.feature-text > p:first-of-type,
+.feature-copy > p:first-of-type{
+  font-family:var(--valeur-editorial-font);
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:-.015em;
+  line-height:1.56;
+}
+.lead{font-size:clamp(20px,1.8vw,24px)}
+.section-sub,.section-head > p,.selection-head > p{font-size:clamp(18px,1.5vw,21px)}
+.statement-copy,.about-copy{font-size:clamp(18px,1.55vw,21px)}
+.hero .hero-grid > div > p:not(.eyebrow){font-size:clamp(20px,1.75vw,23px);max-width:650px}
+.intro > p:first-of-type{font-size:clamp(19px,1.7vw,22px)}
+.luxury-feature-copy > p:not(.luxury-feature-examples){font-size:clamp(18px,1.5vw,21px)}
+.statement-copy .pill-row,.about-copy .about-links{
+  font-family:var(--valeur-ui-font);
+}
+@media(max-width:650px){
+  .lead{font-size:20px;line-height:1.55}
+  .section-sub,.section-head > p,.selection-head > p{font-size:18px}
+}
