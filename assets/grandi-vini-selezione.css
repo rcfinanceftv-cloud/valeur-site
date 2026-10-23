@@ -16,11 +16,11 @@ h1{font-size:clamp(42px,6vw,72px);margin:15px 0 20px}h1 em{font-style:italic;col
 .tools label{display:block;font-size:13px;color:#66594b;font-weight:700}.tools input,.tools select{display:block;width:100%;background:var(--paper);border:1px solid #b9aa91;min-height:50px;padding:12px;margin-top:6px;border-radius:0;color:var(--ink)}
 .count{color:#65594b;font-size:14px;margin:10px 0 22px}.luxury-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .luxury-card{min-width:0;display:flex;flex-direction:column;border:1px solid var(--line);background:var(--paper)}
-.luxury-card-visual{position:relative;min-height:265px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;background:radial-gradient(circle at 50% 38%,#ece0ce,#d7c6aa);overflow:hidden;padding:22px}
-.luxury-card-visual::before{content:'';position:absolute;inset:18px;border:1px solid #b79b70;pointer-events:none}
+.luxury-card-visual{position:relative;min-height:355px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;background:#f4efe5;overflow:hidden;padding:22px}
+.luxury-card-visual::before{content:'';position:absolute;inset:16px;border:1px solid #d8cdbb;pointer-events:none}
 .luxury-mark{font-size:11px;letter-spacing:.19em;color:#795c31;z-index:1}.luxury-visual-monogram{font:italic clamp(52px,6vw,86px) Georgia,serif;color:#4a3725;z-index:1;line-height:1}
 .luxury-visual-maker{font-family:Georgia,serif;font-size:20px;color:#60482f;z-index:1}
-.luxury-card-visual.has-photo{background:#f1eadf}.luxury-card-visual.has-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px;mix-blend-mode:multiply}
+.luxury-card-visual.has-photo{background:#f4efe5}.luxury-card-visual.has-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:24px;mix-blend-mode:multiply}
 .luxury-card-visual.has-photo .luxury-mark,.luxury-card-visual.has-photo .luxury-visual-monogram,.luxury-card-visual.has-photo .luxury-visual-maker{visibility:hidden}
 .luxury-card-body{padding:28px;display:flex;flex-direction:column;flex:1}.luxury-card-body h2{font-size:clamp(25px,2.5vw,34px);margin:10px 0}
 .luxury-tagline{font:italic 19px Georgia,serif;color:#76542f;margin:0 0 8px}.luxury-description{font-size:15px;color:#443c33;line-height:1.75;flex:1}
