@@ -34,3 +34,20 @@ footer{background:#16130f;color:#c8bdaa;padding:30px 0;font-size:13px}footer a{c
 
 /* Shared card finish, retaining the existing typefaces. */
 .luxury-card{border-radius:14px;overflow:hidden}.luxury-cta{border-radius:6px;min-height:46px}.tools input,.tools select{border-radius:6px}.hero-photo img{border-radius:14px}.luxury-card-visual.has-photo img{padding:32px}.luxury-card-body{padding:26px}.luxury-description{line-height:1.8}header{border-bottom:1px solid #c8a45a40}@media(max-width:650px){.luxury-card-body{padding:21px}.luxury-card-visual{min-height:280px}}
+
+/* Compact product browsing; details expand only on request. */
+.luxury-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+.luxury-card-visual{min-height:250px;height:250px}
+.luxury-card-visual.has-photo img{padding:22px}
+.luxury-card-body{padding:20px}
+.luxury-card-body h2{font-size:24px;line-height:1.25;margin:8px 0 10px}
+.luxury-format{font-size:13px;color:#61564a;margin:0 0 10px}
+.luxury-price{margin:0 0 12px}
+.luxury-details{border-top:1px solid var(--line);margin:0 0 16px;padding-top:10px}
+.luxury-details summary{cursor:pointer;color:#76542f;font-size:14px;font-weight:700;min-height:40px;display:list-item;list-style-position:inside;padding:8px 0}
+.luxury-details summary:focus-visible{outline:3px solid #a17839;outline-offset:3px}
+.luxury-details .luxury-description{font-size:14px;line-height:1.7}
+.luxury-details .luxury-tagline{font-size:17px;margin-top:12px}
+.luxury-cta{margin-top:auto}
+@media(max-width:1000px){.luxury-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.luxury-grid{grid-template-columns:1fr}.luxury-card-visual{min-height:230px;height:230px}.luxury-card-body h2{font-size:23px}}
