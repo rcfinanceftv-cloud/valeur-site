@@ -121,6 +121,23 @@
       "priceEUR": 457.33,
       "priceCountry": "Italia",
       "priceType": "vinatis_italy"
+    },
+    {
+      "id": "vinatis-81258",
+      "name": "Dom Pérignon — P2 2008",
+      "category": "Champagne d’eccezione",
+      "maker": "Dom Pérignon",
+      "region": "Champagne · Francia",
+      "format": "2008 · 0,75 L · Cofanetto",
+      "tagline": "Plénitude 2, una nuova espressione del millesimo 2008",
+      "description": "Con Plénitude 2, Dom Pérignon esplora una seconda fase della vita del millesimo. Dopo una lunga maturazione, il 2008 rivela profondità e intensità, con un profilo fresco, fruttato e floreale. Proposto nel cofanetto da 0,75 litri.",
+      "priceNote": "Prezzo dal catalogo Vinatis Italia, verificato il 24 ottobre 2026.",
+      "availabilityNote": "Disponibile nel catalogo al momento della verifica. Prezzo e disponibilità finali sul sito del partner.",
+      "affiliateUrl": "https://clk.tradedoubler.com/click?p=353866&a=3500844&url=https%3A%2F%2Fwww.vinatis.it%2F81258-champagne-dom-perignon-p2-2008-cofanetto",
+      "image": "https://www.vinatis.it/107496-large_default/champagne-dom-perignon-p2-2008-cofanetto.png",
+      "priceEUR": 544.94,
+      "priceCountry": "Italia",
+      "priceType": "vinatis_italy"
     }
   ]
 }
