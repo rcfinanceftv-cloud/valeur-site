@@ -58,9 +58,9 @@
       elem('p','luxury-price-origin',p.priceType === 'foreign_reference' ? 'Riferimento Vinatis '+p.priceCountry+' · non è il prezzo per l’Italia' : 'Prezzo rilevato su Vinatis Italia'),
       elem('p','luxury-availability',p.availabilityNote || 'Verifica disponibilità sul sito del partner.'));
     if (link) {
-      const cta = elem('a','luxury-cta','Verifica su Vinatis ↗');
+      const cta = elem('a','luxury-cta','Ordina su Vinatis ↗');
       cta.href = link; cta.target = '_blank'; cta.rel = 'sponsored noopener noreferrer';
-      cta.setAttribute('aria-label','Verifica su Vinatis: '+p.name);
+      cta.setAttribute('aria-label','Ordina su Vinatis: '+p.name);
       body.append(cta);
     }
     article.append(visual,body);
