@@ -103,9 +103,9 @@
   fetch('/data/catalogo.json').then(r => { if (!r.ok) throw Error('feed'); return r.json(); })
     .then(data => {
       if (!data || !Array.isArray(data.products)) throw Error('schema');
-      const groups = {"champagne":["84975","84346","73337","65156","81258","85560"],"cremant":["46451","41456","55890","74336","63998","20403"],"bordeaux":["79895","63973","81455","79889","51150","63642"],"cofanetti":["87272","81642","14735","35690","80732","69028"],"mese":["74336","63998","63973","79889","85560","80594"],"offerte":["46451","20403","63642","81455","6554","27809"],"horeca":["74336","63998","63973","81455","16641","80594"]};
+      const groups = {"champagne":["84975","84346","73337","65156","81258","85560"],"cremant":["46451","41456","55890","74336","63998","20403"],"bordeaux":["79895","63973","81455","79889","51150","63642"],"cofanetti":["14732","14733","14734","14735","44239","58153"],"mese":["74336","63998","63973","79889","85560","80594"],"offerte":["46451","20403","63642","81455","6554","27809"],"horeca":["74336","63998","63973","81455","16641","80594"]};
       const selectedIds = groups[document.body.dataset.selection] || [];
-      items = selectedIds.map(id => data.products.find(p => String(p.id) === id)).filter(Boolean).map(p => {
+      items = selectedIds.map(id => data.products.find(p => String(p.id) === id)).filter(Boolean).filter(p => document.body.dataset.selection !== 'cofanetti' || p.price >= 100).map(p => {
         const match = p.url.match(/url\(([^)]+)\)$/);
         return {name:p.name,category:p.type,maker:p.brand,region:p.region,format:p.format,
           tagline:p.brand,description:p.description,image:p.image,priceEUR:p.price,priceType:'vinatis_italy',
