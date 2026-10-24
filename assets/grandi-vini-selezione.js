@@ -52,21 +52,33 @@
     const body = elem('div','luxury-card-body');
     const heading = elem('h2','',p.name);
     const link = allowed(p.affiliateUrl);
-    const details = elem('details','luxury-details');
-    const summary = elem('summary','','Apri scheda');
-    summary.setAttribute('aria-label','Apri scheda: '+p.name);
-    details.append(summary,elem('p','luxury-tagline',p.tagline),
-      elem('p','luxury-description',p.description),
-      elem('p','luxury-meta',[p.region,p.format].filter(Boolean).join(' · ')),
-      elem('p','luxury-price-origin',p.priceType === 'foreign_reference' ? 'Riferimento Vinatis '+p.priceCountry+' · non è il prezzo per l’Italia' : 'Prezzo rilevato su Vinatis Italia'),
-      elem('p','luxury-availability',p.availabilityNote || 'Verifica disponibilità sul sito del partner.'));
     body.append(elem('p','luxury-eyebrow',p.category),heading,
       elem('p','luxury-format',p.format || ''),
       elem('p','luxury-price',Number.isFinite(p.priceEUR) ? '€ ' + new Intl.NumberFormat('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2}).format(p.priceEUR) : 'Prezzo su Vinatis'));
-    if (p.priceType === 'foreign_reference') {
-      body.append(elem('p','luxury-price-origin','Riferimento Vinatis '+p.priceCountry+' · prezzo Italia da verificare'));
-    }
-    body.append(details);
+    if (p.priceType === 'foreign_reference') body.append(elem('p','luxury-price-origin','Riferimento Vinatis '+p.priceCountry+' · prezzo Italia da verificare'));
+    const open = elem('button','luxury-open','Apri scheda');
+    open.type = 'button'; open.setAttribute('aria-label','Apri scheda: '+p.name);
+    open.onclick = () => {
+      let dialog = document.getElementById('valeur-product-detail');
+      if (!dialog) { dialog = elem('dialog','luxury-dialog'); dialog.id='valeur-product-detail'; document.body.append(dialog); }
+      dialog.replaceChildren();
+      const close = elem('button','luxury-close','Chiudi'); close.type='button'; close.onclick=()=>dialog.close();
+      const title = elem('h2','',p.name); title.id='valeur-detail-title'; dialog.setAttribute('aria-labelledby',title.id);
+      const layout = elem('div','luxury-dialog-layout');
+      const imageBox = elem('div','luxury-dialog-image');
+      const original = visual.querySelector('img');
+      if (original) { const photo=original.cloneNode(true); photo.loading='eager'; imageBox.append(photo); }
+      const copy = elem('div','luxury-dialog-copy');
+      copy.append(title,elem('p','luxury-tagline',p.tagline),elem('p','luxury-description',p.description),
+        elem('p','luxury-meta',[p.region,p.format].filter(Boolean).join(' · ')),
+        elem('p','luxury-price',Number.isFinite(p.priceEUR)?'€ '+new Intl.NumberFormat('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2}).format(p.priceEUR):'Prezzo su Vinatis'),
+        elem('p','luxury-price-origin',p.priceType==='foreign_reference'?'Riferimento Vinatis '+p.priceCountry+' · non è il prezzo per l’Italia':'Prezzo rilevato su Vinatis Italia'),
+        elem('p','luxury-availability',p.availabilityNote||'Prezzo e disponibilità finali su Vinatis.'));
+      if(link){const order=elem('a','luxury-cta','Ordina su Vinatis ↗');order.href=link;order.target='_blank';order.rel='sponsored noopener noreferrer';copy.append(order);}
+      copy.append(elem('p','luxury-price-origin','Link affiliato, senza costi aggiuntivi per te. L’acquisto si completa su Vinatis.'));
+      layout.append(imageBox,copy); dialog.append(close,layout); dialog.showModal();
+    };
+    body.append(open);
     if (link) {
       const cta = elem('a','luxury-cta','Ordina su Vinatis ↗');
       cta.href = link; cta.target = '_blank'; cta.rel = 'sponsored noopener noreferrer';
