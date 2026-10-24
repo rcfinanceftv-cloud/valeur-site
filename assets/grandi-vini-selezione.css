@@ -31,3 +31,6 @@ footer{background:#16130f;color:#c8bdaa;padding:30px 0;font-size:13px}footer a{c
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-photo img{max-height:310px}.selection-head{display:block}.selection-head p{margin:16px 0}}
 @media(max-width:650px){.wrap{width:calc(100% - 26px)}header nav{gap:12px;flex-wrap:wrap;padding:12px 0}.brand{width:100%}h1{font-size:43px}.hero{padding:28px 0}.tools,.luxury-grid{grid-template-columns:1fr}.luxury-card-visual{min-height:220px}.selection{padding:37px 0}.selection-head h2{font-size:34px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Shared card finish, retaining the existing typefaces. */
+.luxury-card{border-radius:14px;overflow:hidden}.luxury-cta{border-radius:6px;min-height:46px}.tools input,.tools select{border-radius:6px}.hero-photo img{border-radius:14px}.luxury-card-visual.has-photo img{padding:32px}.luxury-card-body{padding:26px}.luxury-description{line-height:1.8}header{border-bottom:1px solid #c8a45a40}@media(max-width:650px){.luxury-card-body{padding:21px}.luxury-card-visual{min-height:280px}}
