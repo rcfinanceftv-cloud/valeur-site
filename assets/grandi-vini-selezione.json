@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "Selezione editoriale VALEUR; indipendente dal feed TradeDoubler 53631",
-  "lastEditorialReview": "2026-10-23",
+  "lastEditorialReview": "2026-10-24",
   "products": [
     {
       "id": "vinatis-11",
@@ -102,6 +102,23 @@
       "affiliateUrl": "https://clk.tradedoubler.com/click?p=353866&a=3500844&url=https%3A%2F%2Fwww.vinatis.it%2F30547-chateau-latour-2009-1er-cru-classe",
       "image": "https://www.theperfectbottle.com/cdn/shop/files/red-wine-ch-latour-1st-growth-grand-cru-classe-pauillac-2009-33230797373590_1024x1024%402x.jpg?v=1704909966",
       "priceEUR": 1413.74,
+      "priceCountry": "Italia",
+      "priceType": "vinatis_italy"
+    },
+    {
+      "id": "vinatis-65156",
+      "name": "Dom Pérignon Rosé — Vintage 2009",
+      "category": "Champagne d’eccezione",
+      "maker": "Dom Pérignon",
+      "region": "Champagne · Francia",
+      "format": "2009 · 0,75 L · Astucciato",
+      "tagline": "Il carattere del Pinot Noir, nell’interpretazione di Dom Pérignon",
+      "description": "Dom Pérignon Rosé Vintage 2009 celebra l’incontro tra Pinot Noir e Chardonnay. Dopo oltre dieci anni di attesa, questo Champagne esprime un equilibrio tra energia e maturità. Una cuvée da scoprire nella versione astucciata da 0,75 litri.",
+      "priceNote": "Prezzo dal catalogo Vinatis Italia, verificato il 24 ottobre 2026.",
+      "availabilityNote": "Disponibile nel catalogo al momento della verifica. Prezzo e disponibilità finali sul sito del partner.",
+      "affiliateUrl": "https://pdt.tradedoubler.com/click?a(3500844)p(353866)product(53631-65156)ttid(3)url(https%3A%2F%2Fwww.vinatis.it%2F65156-champagne-dom-perignon-rose-vintage-2009-astucciato)",
+      "image": "https://www.vinatis.it/93360-large_default/champagne-dom-perignon-rose-vintage-2009-astucciato.png",
+      "priceEUR": 457.33,
       "priceCountry": "Italia",
       "priceType": "vinatis_italy"
     }
