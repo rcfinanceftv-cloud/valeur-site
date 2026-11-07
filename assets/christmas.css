@@ -1,0 +1,12 @@
+/* VALEUR Christmas decoration: static, decorative and click-through. */
+header .brand .mark{position:relative;overflow:visible}
+header .brand .mark::after{content:"";position:absolute;pointer-events:none;left:-8px;top:-13px;width:61px;height:41px;background:url('/assets/christmas-hat.svg') center/contain no-repeat;transform:rotate(-17deg);transform-origin:50% 85%}
+.hero .valeur-christmas-garland{position:absolute;inset:0 0 auto;height:68px;pointer-events:none;z-index:3;overflow:hidden}
+.valeur-christmas-garland::before,.valeur-christmas-garland::after{content:"";position:absolute;top:-6px;width:min(34vw,440px);height:75px;background:url('/assets/christmas-garland.svg') left top/100% auto no-repeat}
+.valeur-christmas-garland::before{left:0}.valeur-christmas-garland::after{right:0;transform:scaleX(-1)}
+.hero::before,.hero::after{content:"";display:block;position:absolute;top:auto;bottom:0;width:100px;height:160px;background:url('/assets/christmas-tree.svg') center bottom/contain no-repeat;pointer-events:none;z-index:3}
+.hero::before{left:5px}.hero::after{right:5px;transform:scaleX(-1)}
+@media(min-width:901px){.hero>.wrap{padding-left:74px}.hero-content{max-width:60%;padding-top:58px;padding-bottom:54px}.hero-image{right:74px;width:42%}}
+@media(min-width:1600px){.hero::before{left:max(8px,calc((100% - 1530px)/2))}.hero::after{right:max(8px,calc((100% - 1530px)/2))}}
+@media(max-width:900px){.hero-content{padding-top:48px}.hero::before,.hero::after{width:84px;height:134px}.hero-image{margin-bottom:32px}.hero .valeur-christmas-garland{height:50px}.valeur-christmas-garland::before,.valeur-christmas-garland::after{width:42vw}}
+@media(max-width:480px){.hero::before,.hero::after{width:60px;height:100px}.hero::before{left:0}.hero::after{right:0}.hero-content{padding-top:42px}.hero .valeur-christmas-garland{height:42px}.valeur-christmas-garland::before,.valeur-christmas-garland::after{width:48vw}header .brand .mark::after{width:55px;height:37px;left:-6px;top:-10px}}
