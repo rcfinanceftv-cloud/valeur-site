@@ -19,3 +19,8 @@ header .brand .mark::after{left:-10px;top:-13px;width:64px;height:44px;transform
 @media(min-width:901px){.hero>.wrap{padding-left:98px}.hero-content{padding-top:96px}.hero-image{right:94px;width:40%}}
 @media(max-width:900px){.hero-content{padding-top:86px}.hero .valeur-christmas-garland{height:84px}.valeur-christmas-garland::before,.valeur-christmas-garland::after{width:43vw;max-width:360px;height:120px;top:-26px}.hero::before,.hero::after{width:90px;height:140px}}
 @media(max-width:480px){.hero-content{padding-top:72px}.hero .valeur-christmas-garland{height:66px}.valeur-christmas-garland::before,.valeur-christmas-garland::after{width:48vw;height:84px;top:-8px}.hero::before,.hero::after{width:67px;height:106px}header .brand .mark::after{width:58px;height:40px;left:-8px;top:-11px}}
+/* A little settled snow on the Boutique frame, away from text and links. */
+.luxury-feature-box{position:relative}
+.luxury-feature-box::before,.luxury-feature-box::after{content:"";position:absolute;top:-12px;width:145px;height:25px;background:url('/assets/christmas-snow-cap.svg') center/contain no-repeat;pointer-events:none}
+.luxury-feature-box::before{left:-1px}.luxury-feature-box::after{right:-1px;transform:scaleX(-1)}
+@media(max-width:480px){.luxury-feature-box::before,.luxury-feature-box::after{width:95px;height:20px;top:-10px}}
